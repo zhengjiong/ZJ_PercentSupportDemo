@@ -3,18 +3,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/item1"
-            android:title="item1" />
+            android:title="PercentRelativeLayout Demo1"
+            android:checked="true"/>
         <item
             android:id="@+id/item2"
-            android:title="item2" />
+            android:title="PercentRelativeLayout Demo2" />
         <item
             android:id="@+id/item3"
-            android:title="item3" />
+            android:title="PercentFrameLayout Demo3" />
         <item
             android:id="@+id/item4"
-            android:title="item4" />
+            android:title="PercentRelativeLayout Demo4" />
         <item
             android:id="@+id/item5"
-            android:title="item5" />
+            android:title="自定义PercentLinearLayout" />
     </group>
 </menu>

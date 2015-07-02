@@ -2,6 +2,7 @@ package com.zj.example.zj_perentsupportlib;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         initNavigation();
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.placeholder, Demo1_.builder().build(), "0")
+                .replace(R.id.placeholder, DemoFragment.newInstance(R.layout.demo1_layout), "0")
                 .commit();
     }
 
@@ -54,20 +55,22 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.item1:
-
+                        selectItem(DemoFragment.newInstance(R.layout.demo1_layout));
                         break;
                     case R.id.item2:
-
+                        selectItem(DemoFragment.newInstance(R.layout.demo2_layout));
                         break;
                     case R.id.item3:
-
+                        selectItem(DemoFragment.newInstance(R.layout.demo3_layout));
                         break;
                     case R.id.item4:
-
+                        selectItem(DemoFragment.newInstance(R.layout.demo4_layout));
                         break;
                     case R.id.item5:
-
+                        selectItem(DemoFragment.newInstance(R.layout.demo5_layout));
                         break;
+                    default:
+                        return false;
                 }
                 menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
@@ -96,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
         mToolbar.setTitle("PerentSupportDemo");
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    void selectItem(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.placeholder, fragment).commit();
     }
 
     @Override
