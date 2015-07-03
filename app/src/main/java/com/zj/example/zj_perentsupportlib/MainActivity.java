@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         initNavigation();
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.placeholder, DemoFragment.newInstance(R.layout.demo1_layout), "0")
+                .replace(R.id.placeholder, DemoFragment.newInstance(R.layout.demo1_layout, "PercentRelativeLayout"))
                 .commit();
     }
 
@@ -55,19 +55,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.item1:
-                        selectItem(DemoFragment.newInstance(R.layout.demo1_layout));
+                        selectItem(DemoFragment.newInstance(R.layout.demo1_layout, "PercentRelativeLayout Demo1"));
                         break;
                     case R.id.item2:
-                        selectItem(DemoFragment.newInstance(R.layout.demo2_layout));
+                        selectItem(DemoFragment.newInstance(R.layout.demo2_layout, "PercentRelativeLayout Demo2"));
                         break;
                     case R.id.item3:
-                        selectItem(DemoFragment.newInstance(R.layout.demo3_layout));
+                        selectItem(DemoFragment.newInstance(R.layout.demo3_layout, "PercentFrameLayout Demo3"));
                         break;
                     case R.id.item4:
-                        selectItem(DemoFragment.newInstance(R.layout.demo4_layout));
+                        selectItem(DemoFragment.newInstance(R.layout.demo4_layout, "PercentRelativeLayout Demo4"));
                         break;
                     case R.id.item5:
-                        selectItem(DemoFragment.newInstance(R.layout.demo5_layout));
+                        selectItem(DemoFragment.newInstance(R.layout.demo5_layout, "自定义PercentLinearLayout"));
                         break;
                     default:
                         return false;
