@@ -7,7 +7,6 @@ dependencies {
 }
 ```
 自定义PercentLinearLayout参考至:
-
 https://github.com/JulienGenoud/android-percent-support-lib-sample
 
 ###Stylable :
